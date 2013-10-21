@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0847BCA11814A94E000C559B /* BMAudioTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0847BCA01814A94E000C559B /* BMAudioTrack.m */; };
+		0847BCA21814AE68000C559B /* BMAudioTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0847BCA01814A94E000C559B /* BMAudioTrack.m */; };
+		085A59C31814914900394472 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 085A59C21814914900394472 /* Sounds */; };
+		085A59C41814914900394472 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 085A59C21814914900394472 /* Sounds */; };
 		08E02F3B1813AB5A005CA4B1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E02F3A1813AB5A005CA4B1 /* Cocoa.framework */; };
 		08E02F451813AB5A005CA4B1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08E02F431813AB5A005CA4B1 /* InfoPlist.strings */; };
 		08E02F471813AB5A005CA4B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E02F461813AB5A005CA4B1 /* main.m */; };
@@ -18,6 +22,39 @@
 		08E02F5B1813AB5A005CA4B1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E02F3A1813AB5A005CA4B1 /* Cocoa.framework */; };
 		08E02F631813AB5A005CA4B1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08E02F611813AB5A005CA4B1 /* InfoPlist.strings */; };
 		08E02F651813AB5A005CA4B1 /* BMAudioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E02F641813AB5A005CA4B1 /* BMAudioTests.m */; };
+		08E02F711813ABB1005CA4B1 /* BMAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E02F701813ABB1005CA4B1 /* BMAudio.m */; };
+		08E02F781813ACBD005CA4B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E02F771813ACBD005CA4B1 /* Foundation.framework */; };
+		08E02F7A1813ACBD005CA4B1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E02F791813ACBD005CA4B1 /* CoreGraphics.framework */; };
+		08E02F7C1813ACBD005CA4B1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E02F7B1813ACBD005CA4B1 /* UIKit.framework */; };
+		08E02F821813ACBE005CA4B1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08E02F801813ACBE005CA4B1 /* InfoPlist.strings */; };
+		08E02F841813ACBE005CA4B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E02F831813ACBE005CA4B1 /* main.m */; };
+		08E02F881813ACBE005CA4B1 /* BMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E02F871813ACBE005CA4B1 /* BMAppDelegate.m */; };
+		08E02F8B1813ACBE005CA4B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E02F891813ACBE005CA4B1 /* Main.storyboard */; };
+		08E02F8E1813ACBE005CA4B1 /* BMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E02F8D1813ACBE005CA4B1 /* BMViewController.m */; };
+		08E02F901813ACBE005CA4B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08E02F8F1813ACBE005CA4B1 /* Images.xcassets */; };
+		08E02F961813ACBE005CA4B1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E02F591813AB5A005CA4B1 /* XCTest.framework */; };
+		08E02F971813ACBE005CA4B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E02F771813ACBD005CA4B1 /* Foundation.framework */; };
+		08E02F981813ACBE005CA4B1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E02F7B1813ACBD005CA4B1 /* UIKit.framework */; };
+		08E02FA01813ACBE005CA4B1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08E02F9E1813ACBE005CA4B1 /* InfoPlist.strings */; };
+		08E02FA21813ACBE005CA4B1 /* BMAudioIOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E02FA11813ACBE005CA4B1 /* BMAudioIOSTests.m */; };
+		08E02FAA1813ACE4005CA4B1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E02FA91813ACE4005CA4B1 /* AudioToolbox.framework */; };
+		08E02FAC1813ACEA005CA4B1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E02FAB1813ACEA005CA4B1 /* AVFoundation.framework */; };
+		08E02FAE1813AEF2005CA4B1 /* BMAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E02F701813ABB1005CA4B1 /* BMAudio.m */; };
+		08E02FC91813B7A8005CA4B1 /* Trombone.aupreset in Resources */ = {isa = PBXBuildFile; fileRef = 08E02FC81813B7A8005CA4B1 /* Trombone.aupreset */; };
+		08E02FCA1813B7A8005CA4B1 /* Trombone.aupreset in Resources */ = {isa = PBXBuildFile; fileRef = 08E02FC81813B7A8005CA4B1 /* Trombone.aupreset */; };
+		08EB17091814B7E100879946 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E02F3F1813AB5A005CA4B1 /* Foundation.framework */; };
+		08EB170B1814B7EE00879946 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EB170A1814B7EE00879946 /* AudioToolbox.framework */; };
+		08EB170D1814B86900879946 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EB170C1814B86900879946 /* AudioUnit.framework */; };
+		08EB171A1814B91800879946 /* BMAudioUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EB17131814B91800879946 /* BMAudioUnit.m */; };
+		08EB171B1814B91800879946 /* BMAudioUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EB17131814B91800879946 /* BMAudioUnit.m */; };
+		08EB171C1814B91800879946 /* BMIOUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EB17151814B91800879946 /* BMIOUnit.m */; };
+		08EB171D1814B91800879946 /* BMIOUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EB17151814B91800879946 /* BMIOUnit.m */; };
+		08EB171E1814B91800879946 /* BMMixerUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EB17171814B91800879946 /* BMMixerUnit.m */; };
+		08EB171F1814B91800879946 /* BMMixerUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EB17171814B91800879946 /* BMMixerUnit.m */; };
+		08EB17201814B91800879946 /* BMSamplerUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EB17191814B91800879946 /* BMSamplerUnit.m */; };
+		08EB17211814B91800879946 /* BMSamplerUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EB17191814B91800879946 /* BMSamplerUnit.m */; };
+		08EB17251814B99500879946 /* BMAudioHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EB17241814B99500879946 /* BMAudioHelpers.m */; };
+		08EB17261814B99500879946 /* BMAudioHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EB17241814B99500879946 /* BMAudioHelpers.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,9 +65,19 @@
 			remoteGlobalIDString = 08E02F361813AB5A005CA4B1;
 			remoteInfo = BMAudio;
 		};
+		08E02F991813ACBE005CA4B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08E02F2F1813AB5A005CA4B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08E02F751813ACBD005CA4B1;
+			remoteInfo = BMAudioIOS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0847BC9F1814A94E000C559B /* BMAudioTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMAudioTrack.h; sourceTree = "<group>"; };
+		0847BCA01814A94E000C559B /* BMAudioTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMAudioTrack.m; sourceTree = "<group>"; };
+		085A59C21814914900394472 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
 		08E02F371813AB5A005CA4B1 /* BMAudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMAudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08E02F3A1813AB5A005CA4B1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		08E02F3D1813AB5A005CA4B1 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -50,6 +97,41 @@
 		08E02F601813AB5A005CA4B1 /* BMAudioTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BMAudioTests-Info.plist"; sourceTree = "<group>"; };
 		08E02F621813AB5A005CA4B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		08E02F641813AB5A005CA4B1 /* BMAudioTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMAudioTests.m; sourceTree = "<group>"; };
+		08E02F6F1813ABB1005CA4B1 /* BMAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMAudio.h; sourceTree = "<group>"; };
+		08E02F701813ABB1005CA4B1 /* BMAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMAudio.m; sourceTree = "<group>"; };
+		08E02F761813ACBD005CA4B1 /* BMAudioIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMAudioIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		08E02F771813ACBD005CA4B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		08E02F791813ACBD005CA4B1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		08E02F7B1813ACBD005CA4B1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		08E02F7F1813ACBD005CA4B1 /* BMAudioIOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BMAudioIOS-Info.plist"; sourceTree = "<group>"; };
+		08E02F811813ACBE005CA4B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		08E02F831813ACBE005CA4B1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		08E02F851813ACBE005CA4B1 /* BMAudioIOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BMAudioIOS-Prefix.pch"; sourceTree = "<group>"; };
+		08E02F861813ACBE005CA4B1 /* BMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMAppDelegate.h; sourceTree = "<group>"; };
+		08E02F871813ACBE005CA4B1 /* BMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMAppDelegate.m; sourceTree = "<group>"; };
+		08E02F8A1813ACBE005CA4B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		08E02F8C1813ACBE005CA4B1 /* BMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMViewController.h; sourceTree = "<group>"; };
+		08E02F8D1813ACBE005CA4B1 /* BMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMViewController.m; sourceTree = "<group>"; };
+		08E02F8F1813ACBE005CA4B1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		08E02F951813ACBE005CA4B1 /* BMAudioIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BMAudioIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		08E02F9D1813ACBE005CA4B1 /* BMAudioIOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BMAudioIOSTests-Info.plist"; sourceTree = "<group>"; };
+		08E02F9F1813ACBE005CA4B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		08E02FA11813ACBE005CA4B1 /* BMAudioIOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMAudioIOSTests.m; sourceTree = "<group>"; };
+		08E02FA91813ACE4005CA4B1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		08E02FAB1813ACEA005CA4B1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		08E02FC81813B7A8005CA4B1 /* Trombone.aupreset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Trombone.aupreset; sourceTree = "<group>"; };
+		08EB170A1814B7EE00879946 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		08EB170C1814B86900879946 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		08EB17121814B91800879946 /* BMAudioUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMAudioUnit.h; sourceTree = "<group>"; };
+		08EB17131814B91800879946 /* BMAudioUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMAudioUnit.m; sourceTree = "<group>"; };
+		08EB17141814B91800879946 /* BMIOUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMIOUnit.h; sourceTree = "<group>"; };
+		08EB17151814B91800879946 /* BMIOUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMIOUnit.m; sourceTree = "<group>"; };
+		08EB17161814B91800879946 /* BMMixerUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMMixerUnit.h; sourceTree = "<group>"; };
+		08EB17171814B91800879946 /* BMMixerUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMMixerUnit.m; sourceTree = "<group>"; };
+		08EB17181814B91800879946 /* BMSamplerUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMSamplerUnit.h; sourceTree = "<group>"; };
+		08EB17191814B91800879946 /* BMSamplerUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMSamplerUnit.m; sourceTree = "<group>"; };
+		08EB17231814B99500879946 /* BMAudioHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMAudioHelpers.h; sourceTree = "<group>"; };
+		08EB17241814B99500879946 /* BMAudioHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMAudioHelpers.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +139,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08EB170D1814B86900879946 /* AudioUnit.framework in Frameworks */,
+				08EB170B1814B7EE00879946 /* AudioToolbox.framework in Frameworks */,
+				08EB17091814B7E100879946 /* Foundation.framework in Frameworks */,
 				08E02F3B1813AB5A005CA4B1 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +155,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		08E02F731813ACBD005CA4B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08E02F7A1813ACBD005CA4B1 /* CoreGraphics.framework in Frameworks */,
+				08E02F7C1813ACBD005CA4B1 /* UIKit.framework in Frameworks */,
+				08E02F781813ACBD005CA4B1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08E02F921813ACBE005CA4B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08E02FAC1813ACEA005CA4B1 /* AVFoundation.framework in Frameworks */,
+				08E02FAA1813ACE4005CA4B1 /* AudioToolbox.framework in Frameworks */,
+				08E02F961813ACBE005CA4B1 /* XCTest.framework in Frameworks */,
+				08E02F981813ACBE005CA4B1 /* UIKit.framework in Frameworks */,
+				08E02F971813ACBE005CA4B1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,8 +185,13 @@
 			children = (
 				08E02F401813AB5A005CA4B1 /* BMAudio */,
 				08E02F5E1813AB5A005CA4B1 /* BMAudioTests */,
+				08E02F7D1813ACBD005CA4B1 /* BMAudioIOS */,
+				08E02F9B1813ACBE005CA4B1 /* BMAudioIOSTests */,
 				08E02F391813AB5A005CA4B1 /* Frameworks */,
 				08E02F381813AB5A005CA4B1 /* Products */,
+				08E02F6E1813AB97005CA4B1 /* Classes */,
+				08E02FC81813B7A8005CA4B1 /* Trombone.aupreset */,
+				085A59C21814914900394472 /* Sounds */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +200,8 @@
 			children = (
 				08E02F371813AB5A005CA4B1 /* BMAudio.app */,
 				08E02F581813AB5A005CA4B1 /* BMAudioTests.xctest */,
+				08E02F761813ACBD005CA4B1 /* BMAudioIOS.app */,
+				08E02F951813ACBE005CA4B1 /* BMAudioIOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,8 +209,15 @@
 		08E02F391813AB5A005CA4B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				08EB170C1814B86900879946 /* AudioUnit.framework */,
+				08EB170A1814B7EE00879946 /* AudioToolbox.framework */,
+				08E02FAB1813ACEA005CA4B1 /* AVFoundation.framework */,
+				08E02FA91813ACE4005CA4B1 /* AudioToolbox.framework */,
 				08E02F3A1813AB5A005CA4B1 /* Cocoa.framework */,
 				08E02F591813AB5A005CA4B1 /* XCTest.framework */,
+				08E02F771813ACBD005CA4B1 /* Foundation.framework */,
+				08E02F791813ACBD005CA4B1 /* CoreGraphics.framework */,
+				08E02F7B1813ACBD005CA4B1 /* UIKit.framework */,
 				08E02F3C1813AB5A005CA4B1 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -154,6 +275,78 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		08E02F6E1813AB97005CA4B1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				08EB17111814B91800879946 /* AudioUnits */,
+				08E02F6F1813ABB1005CA4B1 /* BMAudio.h */,
+				08E02F701813ABB1005CA4B1 /* BMAudio.m */,
+				0847BC9F1814A94E000C559B /* BMAudioTrack.h */,
+				0847BCA01814A94E000C559B /* BMAudioTrack.m */,
+				08EB17231814B99500879946 /* BMAudioHelpers.h */,
+				08EB17241814B99500879946 /* BMAudioHelpers.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		08E02F7D1813ACBD005CA4B1 /* BMAudioIOS */ = {
+			isa = PBXGroup;
+			children = (
+				08E02F861813ACBE005CA4B1 /* BMAppDelegate.h */,
+				08E02F871813ACBE005CA4B1 /* BMAppDelegate.m */,
+				08E02F891813ACBE005CA4B1 /* Main.storyboard */,
+				08E02F8C1813ACBE005CA4B1 /* BMViewController.h */,
+				08E02F8D1813ACBE005CA4B1 /* BMViewController.m */,
+				08E02F8F1813ACBE005CA4B1 /* Images.xcassets */,
+				08E02F7E1813ACBD005CA4B1 /* Supporting Files */,
+			);
+			path = BMAudioIOS;
+			sourceTree = "<group>";
+		};
+		08E02F7E1813ACBD005CA4B1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				08E02F7F1813ACBD005CA4B1 /* BMAudioIOS-Info.plist */,
+				08E02F801813ACBE005CA4B1 /* InfoPlist.strings */,
+				08E02F831813ACBE005CA4B1 /* main.m */,
+				08E02F851813ACBE005CA4B1 /* BMAudioIOS-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		08E02F9B1813ACBE005CA4B1 /* BMAudioIOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				08E02FA11813ACBE005CA4B1 /* BMAudioIOSTests.m */,
+				08E02F9C1813ACBE005CA4B1 /* Supporting Files */,
+			);
+			path = BMAudioIOSTests;
+			sourceTree = "<group>";
+		};
+		08E02F9C1813ACBE005CA4B1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				08E02F9D1813ACBE005CA4B1 /* BMAudioIOSTests-Info.plist */,
+				08E02F9E1813ACBE005CA4B1 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		08EB17111814B91800879946 /* AudioUnits */ = {
+			isa = PBXGroup;
+			children = (
+				08EB17121814B91800879946 /* BMAudioUnit.h */,
+				08EB17131814B91800879946 /* BMAudioUnit.m */,
+				08EB17141814B91800879946 /* BMIOUnit.h */,
+				08EB17151814B91800879946 /* BMIOUnit.m */,
+				08EB17161814B91800879946 /* BMMixerUnit.h */,
+				08EB17171814B91800879946 /* BMMixerUnit.m */,
+				08EB17181814B91800879946 /* BMSamplerUnit.h */,
+				08EB17191814B91800879946 /* BMSamplerUnit.m */,
+			);
+			path = AudioUnits;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -192,6 +385,41 @@
 			productReference = 08E02F581813AB5A005CA4B1 /* BMAudioTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		08E02F751813ACBD005CA4B1 /* BMAudioIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08E02FA31813ACBE005CA4B1 /* Build configuration list for PBXNativeTarget "BMAudioIOS" */;
+			buildPhases = (
+				08E02F721813ACBD005CA4B1 /* Sources */,
+				08E02F731813ACBD005CA4B1 /* Frameworks */,
+				08E02F741813ACBD005CA4B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BMAudioIOS;
+			productName = BMAudioIOS;
+			productReference = 08E02F761813ACBD005CA4B1 /* BMAudioIOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		08E02F941813ACBE005CA4B1 /* BMAudioIOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08E02FA61813ACBE005CA4B1 /* Build configuration list for PBXNativeTarget "BMAudioIOSTests" */;
+			buildPhases = (
+				08E02F911813ACBE005CA4B1 /* Sources */,
+				08E02F921813ACBE005CA4B1 /* Frameworks */,
+				08E02F931813ACBE005CA4B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				08E02F9A1813ACBE005CA4B1 /* PBXTargetDependency */,
+			);
+			name = BMAudioIOSTests;
+			productName = BMAudioIOSTests;
+			productReference = 08E02F951813ACBE005CA4B1 /* BMAudioIOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -203,6 +431,9 @@
 				ORGANIZATIONNAME = "BeatMatch LLC";
 				TargetAttributes = {
 					08E02F571813AB5A005CA4B1 = {
+						TestTargetID = 08E02F361813AB5A005CA4B1;
+					};
+					08E02F941813ACBE005CA4B1 = {
 						TestTargetID = 08E02F361813AB5A005CA4B1;
 					};
 				};
@@ -222,6 +453,8 @@
 			targets = (
 				08E02F361813AB5A005CA4B1 /* BMAudio */,
 				08E02F571813AB5A005CA4B1 /* BMAudioTests */,
+				08E02F751813ACBD005CA4B1 /* BMAudioIOS */,
+				08E02F941813ACBE005CA4B1 /* BMAudioIOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -231,9 +464,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				085A59C31814914900394472 /* Sounds in Resources */,
 				08E02F451813AB5A005CA4B1 /* InfoPlist.strings in Resources */,
 				08E02F531813AB5A005CA4B1 /* Images.xcassets in Resources */,
 				08E02F4B1813AB5A005CA4B1 /* Credits.rtf in Resources */,
+				08E02FC91813B7A8005CA4B1 /* Trombone.aupreset in Resources */,
 				08E02F511813AB5A005CA4B1 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,6 +481,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		08E02F741813ACBD005CA4B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				085A59C41814914900394472 /* Sounds in Resources */,
+				08E02FCA1813B7A8005CA4B1 /* Trombone.aupreset in Resources */,
+				08E02F901813ACBE005CA4B1 /* Images.xcassets in Resources */,
+				08E02F821813ACBE005CA4B1 /* InfoPlist.strings in Resources */,
+				08E02F8B1813ACBE005CA4B1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08E02F931813ACBE005CA4B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08E02FA01813ACBE005CA4B1 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -254,7 +509,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				08E02F471813AB5A005CA4B1 /* main.m in Sources */,
+				08EB17251814B99500879946 /* BMAudioHelpers.m in Sources */,
+				08EB17201814B91800879946 /* BMSamplerUnit.m in Sources */,
+				08E02F711813ABB1005CA4B1 /* BMAudio.m in Sources */,
+				08EB171C1814B91800879946 /* BMIOUnit.m in Sources */,
+				08EB171E1814B91800879946 /* BMMixerUnit.m in Sources */,
 				08E02F4E1813AB5A005CA4B1 /* BMAppDelegate.m in Sources */,
+				0847BCA11814A94E000C559B /* BMAudioTrack.m in Sources */,
+				08EB171A1814B91800879946 /* BMAudioUnit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +528,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		08E02F721813ACBD005CA4B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08E02F8E1813ACBE005CA4B1 /* BMViewController.m in Sources */,
+				08EB17211814B91800879946 /* BMSamplerUnit.m in Sources */,
+				08E02FAE1813AEF2005CA4B1 /* BMAudio.m in Sources */,
+				08E02F841813ACBE005CA4B1 /* main.m in Sources */,
+				08EB171D1814B91800879946 /* BMIOUnit.m in Sources */,
+				08EB17261814B99500879946 /* BMAudioHelpers.m in Sources */,
+				08EB171F1814B91800879946 /* BMMixerUnit.m in Sources */,
+				08E02F881813ACBE005CA4B1 /* BMAppDelegate.m in Sources */,
+				0847BCA21814AE68000C559B /* BMAudioTrack.m in Sources */,
+				08EB171B1814B91800879946 /* BMAudioUnit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08E02F911813ACBE005CA4B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08E02FA21813ACBE005CA4B1 /* BMAudioIOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -273,6 +560,11 @@
 			isa = PBXTargetDependency;
 			target = 08E02F361813AB5A005CA4B1 /* BMAudio */;
 			targetProxy = 08E02F5C1813AB5A005CA4B1 /* PBXContainerItemProxy */;
+		};
+		08E02F9A1813ACBE005CA4B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 08E02F751813ACBD005CA4B1 /* BMAudioIOS */;
+			targetProxy = 08E02F991813ACBE005CA4B1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -305,6 +597,30 @@
 			isa = PBXVariantGroup;
 			children = (
 				08E02F621813AB5A005CA4B1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		08E02F801813ACBE005CA4B1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				08E02F811813ACBE005CA4B1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		08E02F891813ACBE005CA4B1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				08E02F8A1813ACBE005CA4B1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		08E02F9E1813ACBE005CA4B1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				08E02F9F1813ACBE005CA4B1 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -446,6 +762,104 @@
 			};
 			name = Release;
 		};
+		08E02FA41813ACBE005CA4B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BMAudioIOS/BMAudioIOS-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BMAudioIOS/BMAudioIOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		08E02FA51813ACBE005CA4B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BMAudioIOS/BMAudioIOS-Prefix.pch";
+				INFOPLIST_FILE = "BMAudioIOS/BMAudioIOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		08E02FA71813ACBE005CA4B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BMAudio.app/Contents/MacOS/BMAudio";
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BMAudioIOS/BMAudioIOS-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BMAudioIOSTests/BMAudioIOSTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		08E02FA81813ACBE005CA4B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BMAudio.app/Contents/MacOS/BMAudio";
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BMAudioIOS/BMAudioIOS-Prefix.pch";
+				INFOPLIST_FILE = "BMAudioIOSTests/BMAudioIOSTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -465,6 +879,7 @@
 				08E02F6A1813AB5A005CA4B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		08E02F6B1813AB5A005CA4B1 /* Build configuration list for PBXNativeTarget "BMAudioTests" */ = {
 			isa = XCConfigurationList;
@@ -473,6 +888,25 @@
 				08E02F6D1813AB5A005CA4B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		08E02FA31813ACBE005CA4B1 /* Build configuration list for PBXNativeTarget "BMAudioIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08E02FA41813ACBE005CA4B1 /* Debug */,
+				08E02FA51813ACBE005CA4B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		08E02FA61813ACBE005CA4B1 /* Build configuration list for PBXNativeTarget "BMAudioIOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08E02FA71813ACBE005CA4B1 /* Debug */,
+				08E02FA81813ACBE005CA4B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

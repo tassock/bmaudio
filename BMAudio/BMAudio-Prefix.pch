@@ -4,6 +4,16 @@
 //  The contents of this file are implicitly included at the beginning of every source file.
 //
 
+#if defined(TARGET_OS_IPHONE) || defined(TARGET_IPHONE_SIMULATOR)
+    #define TARGET_OS_IOS
+#endif
+
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
+#endif
+
+#import <AudioToolbox/AudioToolbox.h>
+
+#ifdef TARGET_OS_IOS
+#import <AVFoundation/AVFoundation.h>
 #endif
