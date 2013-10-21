@@ -68,7 +68,7 @@
 	CFRelease (propertyResourceData);
 }
 
-- (void)noteOnWithNote:(NSUInteger)note velocity:(NSUInteger)velocity
+- (void)noteOnWithNote:(UInt32)note velocity:(UInt32)velocity
 {
     CheckError(MusicDeviceMIDIEvent (audioUnit,
                                      144,
@@ -78,7 +78,7 @@
                "Couldn't send MIDI event");
 }
 
-- (void)noteOffWithNote:(NSUInteger)note
+- (void)noteOffWithNote:(UInt32)note
 {
     CheckError(MusicDeviceMIDIEvent (audioUnit,
                                      128,

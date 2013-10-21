@@ -7,12 +7,13 @@
 //
 
 #import "BMAudioUnit.h"
+#import "BMMidiManager.h"
 
-@interface BMSamplerUnit : BMAudioUnit
+@interface BMSamplerUnit : BMAudioUnit <BMMidiInstrument>
 
 - (void)loadPreset:(NSString*)presetName;
 
-- (void)noteOnWithNote:(NSUInteger)note velocity:(NSUInteger)velocity;
-- (void)noteOffWithNote:(NSUInteger)note;
+- (void)noteOnWithNote:(UInt32)note velocity:(UInt32)velocity;
+- (void)noteOffWithNote:(UInt32)note;
 
 @end

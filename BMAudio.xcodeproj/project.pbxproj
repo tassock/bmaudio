@@ -55,6 +55,9 @@
 		08EB17211814B91800879946 /* BMSamplerUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EB17191814B91800879946 /* BMSamplerUnit.m */; };
 		08EB17251814B99500879946 /* BMAudioHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EB17241814B99500879946 /* BMAudioHelpers.m */; };
 		08EB17261814B99500879946 /* BMAudioHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EB17241814B99500879946 /* BMAudioHelpers.m */; };
+		08EB17291814E4C300879946 /* BMMidiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EB17281814E4C300879946 /* BMMidiManager.m */; };
+		08EB172A1814E4C300879946 /* BMMidiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EB17281814E4C300879946 /* BMMidiManager.m */; };
+		08EB172C1814E8C700879946 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EB172B1814E8C700879946 /* CoreMIDI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +135,9 @@
 		08EB17191814B91800879946 /* BMSamplerUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMSamplerUnit.m; sourceTree = "<group>"; };
 		08EB17231814B99500879946 /* BMAudioHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMAudioHelpers.h; sourceTree = "<group>"; };
 		08EB17241814B99500879946 /* BMAudioHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMAudioHelpers.m; sourceTree = "<group>"; };
+		08EB17271814E4C300879946 /* BMMidiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMMidiManager.h; sourceTree = "<group>"; };
+		08EB17281814E4C300879946 /* BMMidiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMMidiManager.m; sourceTree = "<group>"; };
+		08EB172B1814E8C700879946 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08EB172C1814E8C700879946 /* CoreMIDI.framework in Frameworks */,
 				08EB170D1814B86900879946 /* AudioUnit.framework in Frameworks */,
 				08EB170B1814B7EE00879946 /* AudioToolbox.framework in Frameworks */,
 				08EB17091814B7E100879946 /* Foundation.framework in Frameworks */,
@@ -209,6 +216,7 @@
 		08E02F391813AB5A005CA4B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				08EB172B1814E8C700879946 /* CoreMIDI.framework */,
 				08EB170C1814B86900879946 /* AudioUnit.framework */,
 				08EB170A1814B7EE00879946 /* AudioToolbox.framework */,
 				08E02FAB1813ACEA005CA4B1 /* AVFoundation.framework */,
@@ -285,6 +293,8 @@
 				0847BCA01814A94E000C559B /* BMAudioTrack.m */,
 				08EB17231814B99500879946 /* BMAudioHelpers.h */,
 				08EB17241814B99500879946 /* BMAudioHelpers.m */,
+				08EB17271814E4C300879946 /* BMMidiManager.h */,
+				08EB17281814E4C300879946 /* BMMidiManager.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -513,6 +523,7 @@
 				08EB17201814B91800879946 /* BMSamplerUnit.m in Sources */,
 				08E02F711813ABB1005CA4B1 /* BMAudio.m in Sources */,
 				08EB171C1814B91800879946 /* BMIOUnit.m in Sources */,
+				08EB17291814E4C300879946 /* BMMidiManager.m in Sources */,
 				08EB171E1814B91800879946 /* BMMixerUnit.m in Sources */,
 				08E02F4E1813AB5A005CA4B1 /* BMAppDelegate.m in Sources */,
 				0847BCA11814A94E000C559B /* BMAudioTrack.m in Sources */,
@@ -533,6 +544,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08E02F8E1813ACBE005CA4B1 /* BMViewController.m in Sources */,
+				08EB172A1814E4C300879946 /* BMMidiManager.m in Sources */,
 				08EB17211814B91800879946 /* BMSamplerUnit.m in Sources */,
 				08E02FAE1813AEF2005CA4B1 /* BMAudio.m in Sources */,
 				08E02F841813ACBE005CA4B1 /* main.m in Sources */,
