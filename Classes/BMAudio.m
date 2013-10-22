@@ -21,7 +21,6 @@
 
 @interface BMAudio ()
 {
-    AUGraph graph;
     BMSamplerUnit *samplerUnit;
     BMIOUnit *ioUnit;
     BMMixerUnit *mixerUnit;
@@ -30,6 +29,8 @@
 @end
 
 @implementation BMAudio
+
+// TODO: start / stop graph
 
 - (id)init
 {

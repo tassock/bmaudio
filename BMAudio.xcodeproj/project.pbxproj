@@ -13,6 +13,11 @@
 		085A59C41814914900394472 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 085A59C21814914900394472 /* Sounds */; };
 		0864ACD01816353A0025DB7C /* BMReverbUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0864ACCF1816353A0025DB7C /* BMReverbUnit.m */; };
 		0864ACD5181642FC0025DB7C /* BMDistortionUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0864ACD4181642FC0025DB7C /* BMDistortionUnit.m */; };
+		0864ACD8181647160025DB7C /* BMMusicPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0864ACD7181647160025DB7C /* BMMusicPlayer.m */; };
+		0864ACDC1816491D0025DB7C /* BMDistortionUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0864ACD4181642FC0025DB7C /* BMDistortionUnit.m */; };
+		0864ACDD181649200025DB7C /* BMReverbUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0864ACCF1816353A0025DB7C /* BMReverbUnit.m */; };
+		0864ACDF181649840025DB7C /* presto.mid in Resources */ = {isa = PBXBuildFile; fileRef = 0864ACDE181649840025DB7C /* presto.mid */; };
+		0864ACE0181649840025DB7C /* presto.mid in Resources */ = {isa = PBXBuildFile; fileRef = 0864ACDE181649840025DB7C /* presto.mid */; };
 		08E02F3B1813AB5A005CA4B1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E02F3A1813AB5A005CA4B1 /* Cocoa.framework */; };
 		08E02F451813AB5A005CA4B1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08E02F431813AB5A005CA4B1 /* InfoPlist.strings */; };
 		08E02F471813AB5A005CA4B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E02F461813AB5A005CA4B1 /* main.m */; };
@@ -87,6 +92,9 @@
 		0864ACCF1816353A0025DB7C /* BMReverbUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMReverbUnit.m; sourceTree = "<group>"; };
 		0864ACD3181642FC0025DB7C /* BMDistortionUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMDistortionUnit.h; sourceTree = "<group>"; };
 		0864ACD4181642FC0025DB7C /* BMDistortionUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMDistortionUnit.m; sourceTree = "<group>"; };
+		0864ACD6181647160025DB7C /* BMMusicPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMMusicPlayer.h; sourceTree = "<group>"; };
+		0864ACD7181647160025DB7C /* BMMusicPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMMusicPlayer.m; sourceTree = "<group>"; };
+		0864ACDE181649840025DB7C /* presto.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = presto.mid; sourceTree = "<group>"; };
 		08E02F371813AB5A005CA4B1 /* BMAudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMAudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08E02F3A1813AB5A005CA4B1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		08E02F3D1813AB5A005CA4B1 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -250,6 +258,7 @@
 		08E02F401813AB5A005CA4B1 /* BMAudio */ = {
 			isa = PBXGroup;
 			children = (
+				0864ACDE181649840025DB7C /* presto.mid */,
 				08E02F4C1813AB5A005CA4B1 /* BMAppDelegate.h */,
 				08E02F4D1813AB5A005CA4B1 /* BMAppDelegate.m */,
 				08E02F4F1813AB5A005CA4B1 /* MainMenu.xib */,
@@ -301,6 +310,8 @@
 				08EB17241814B99500879946 /* BMAudioHelpers.m */,
 				08EB17271814E4C300879946 /* BMMidiManager.h */,
 				08EB17281814E4C300879946 /* BMMidiManager.m */,
+				0864ACD6181647160025DB7C /* BMMusicPlayer.h */,
+				0864ACD7181647160025DB7C /* BMMusicPlayer.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -490,6 +501,7 @@
 				08E02F4B1813AB5A005CA4B1 /* Credits.rtf in Resources */,
 				08E02FC91813B7A8005CA4B1 /* Trombone.aupreset in Resources */,
 				08E02F511813AB5A005CA4B1 /* MainMenu.xib in Resources */,
+				0864ACDF181649840025DB7C /* presto.mid in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +517,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0864ACE0181649840025DB7C /* presto.mid in Resources */,
 				085A59C41814914900394472 /* Sounds in Resources */,
 				08E02FCA1813B7A8005CA4B1 /* Trombone.aupreset in Resources */,
 				08E02F901813ACBE005CA4B1 /* Images.xcassets in Resources */,
@@ -528,6 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0864ACD8181647160025DB7C /* BMMusicPlayer.m in Sources */,
 				08E02F471813AB5A005CA4B1 /* main.m in Sources */,
 				08EB17251814B99500879946 /* BMAudioHelpers.m in Sources */,
 				08EB17201814B91800879946 /* BMSamplerUnit.m in Sources */,
@@ -562,6 +576,8 @@
 				08E02F841813ACBE005CA4B1 /* main.m in Sources */,
 				08EB171D1814B91800879946 /* BMIOUnit.m in Sources */,
 				08EB17261814B99500879946 /* BMAudioHelpers.m in Sources */,
+				0864ACDD181649200025DB7C /* BMReverbUnit.m in Sources */,
+				0864ACDC1816491D0025DB7C /* BMDistortionUnit.m in Sources */,
 				08EB171F1814B91800879946 /* BMMixerUnit.m in Sources */,
 				08E02F881813ACBE005CA4B1 /* BMAppDelegate.m in Sources */,
 				0847BCA21814AE68000C559B /* BMAudioTrack.m in Sources */,

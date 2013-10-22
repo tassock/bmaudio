@@ -13,6 +13,7 @@
 #import "BMReverbUnit.h"
 #import "BMDistortionUnit.h"
 #import "BMMidiManager.h"
+#import "BMMusicPlayer.h"
 
 @implementation BMAppDelegate
 
@@ -36,6 +37,9 @@
     
     [[BMMidiManager sharedInstance] setUp];
     [BMMidiManager sharedInstance].instrumentDelegate = tromboneSampler2;
+    
+    BMMusicPlayer *musicPlayer = [[BMMusicPlayer alloc] init];
+    [musicPlayer setUpFromGraph:[BMAudio sharedInstance]->graph];
 }
 
 @end

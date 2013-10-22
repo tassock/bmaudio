@@ -11,6 +11,10 @@
 @class BMAudioTrack;
 
 @interface BMAudio : NSObject
+{
+    @public
+    AUGraph graph;
+}
 
 + (instancetype)sharedInstance;
 
