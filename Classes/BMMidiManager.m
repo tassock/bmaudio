@@ -22,7 +22,6 @@ void MyMIDINotifyProc (const MIDINotification  *message, void *refCon) {
 }
 
 static void	MyMIDIReadProc(const MIDIPacketList *pktlist, void *refCon, void *connRefCon) {
-    //	MyMIDIPlayer *player = (MyMIDIPlayer*) refCon;
     BMMidiManager *midiManager = (__bridge BMMidiManager*) refCon;
     
 	MIDIPacket *packet = (MIDIPacket *)pktlist->packet;
@@ -47,15 +46,6 @@ static void	MyMIDIReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
                     [midiManager.instrumentDelegate noteOffWithNote:note];
                 }
             }
-			
-			// send to augraph
-            //			CheckError(MusicDeviceMIDIEvent (player->instrumentUnit,
-            //											 midiStatus,
-            //											 note,
-            //											 velocity,
-            //											 0),
-            //					   "Couldn't send MIDI event");
-			
 		}
 		packet = MIDIPacketNext(packet);
 	}

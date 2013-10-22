@@ -89,16 +89,36 @@
     AUGraphOpen(graph);
     
     // Connect units TODO connect last unit
+    int t = 0;
     for (BMAudioTrack *audioTrack in self.audioTracks)
     {
+        BMAudioUnit *previousUnit;
+        NSUInteger unitCount = audioTrack.audioUnits.count;
+        int u = 0;
         for (BMAudioUnit *audioUnit in audioTrack.audioUnits)
         {
-            AUGraphConnectNodeInput(graph, audioUnit->audioNode, 0, mixerUnit->audioNode, 0);
+            u ++;
+            BOOL isLastUnit = (u == unitCount);
+            if (isLastUnit)
+            {
+                // connect to mixer
+                CheckError(AUGraphConnectNodeInput(graph, audioUnit->audioNode, 0, mixerUnit->audioNode, t),
+                           "Could not connect to mixerUnit");
+            }
+            if (previousUnit)
+            {
+                // connect to previous unit
+                CheckError(AUGraphConnectNodeInput(graph, previousUnit->audioNode, 0, audioUnit->audioNode, 0),
+                           "Could not connect ? to ?");
+            }
+            previousUnit = audioUnit;
         }
+        t ++;
     }
     
     // configure mixer and connect unit to IO Unit
-    AUGraphConnectNodeInput(graph, mixerUnit->audioNode, 0, ioUnit->audioNode, 0);
+    CheckError(AUGraphConnectNodeInput(graph, mixerUnit->audioNode, 0, ioUnit->audioNode, 0),
+               "Could not connect mixerUnit to ioUnit");
     
     
     // Obtain unit instances from their corresponding nodes.

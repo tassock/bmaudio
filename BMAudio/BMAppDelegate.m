@@ -10,6 +10,8 @@
 #import "BMAudio.h"
 #import "BMAudioTrack.h"
 #import "BMSamplerUnit.h"
+#import "BMReverbUnit.h"
+#import "BMDistortionUnit.h"
 #import "BMMidiManager.h"
 
 @implementation BMAppDelegate
@@ -18,15 +20,22 @@
 {
     // Insert code here to initialize your application
     BMSamplerUnit *tromboneSampler = [BMSamplerUnit unit];
-    BMAudioTrack *tromboneTrack = [BMAudioTrack trackWithUnits:@[tromboneSampler]];
+    BMReverbUnit *reverbUnit = [BMReverbUnit unit];
+    BMAudioTrack *tromboneTrack = [BMAudioTrack trackWithUnits:@[tromboneSampler, reverbUnit]];
     [[BMAudio sharedInstance] loadAudioTrack:tromboneTrack];
+    
+    BMSamplerUnit *tromboneSampler2 = [BMSamplerUnit unit];
+    BMDistortionUnit *distortionUnit = [BMDistortionUnit unit];
+    BMAudioTrack *tromboneTrack2 = [BMAudioTrack trackWithUnits:@[tromboneSampler2, distortionUnit]];
+    [[BMAudio sharedInstance] loadAudioTrack:tromboneTrack2];
     
     [[BMAudio sharedInstance] setUpAudioGraph];
     
     [tromboneSampler loadPreset:@"Trombone"];
+    [tromboneSampler2 loadPreset:@"Trombone"];
     
     [[BMMidiManager sharedInstance] setUp];
-    [BMMidiManager sharedInstance].instrumentDelegate = tromboneSampler;
+    [BMMidiManager sharedInstance].instrumentDelegate = tromboneSampler2;
 }
 
 @end

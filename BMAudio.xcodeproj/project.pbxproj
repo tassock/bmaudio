@@ -11,6 +11,8 @@
 		0847BCA21814AE68000C559B /* BMAudioTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0847BCA01814A94E000C559B /* BMAudioTrack.m */; };
 		085A59C31814914900394472 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 085A59C21814914900394472 /* Sounds */; };
 		085A59C41814914900394472 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 085A59C21814914900394472 /* Sounds */; };
+		0864ACD01816353A0025DB7C /* BMReverbUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0864ACCF1816353A0025DB7C /* BMReverbUnit.m */; };
+		0864ACD5181642FC0025DB7C /* BMDistortionUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0864ACD4181642FC0025DB7C /* BMDistortionUnit.m */; };
 		08E02F3B1813AB5A005CA4B1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E02F3A1813AB5A005CA4B1 /* Cocoa.framework */; };
 		08E02F451813AB5A005CA4B1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08E02F431813AB5A005CA4B1 /* InfoPlist.strings */; };
 		08E02F471813AB5A005CA4B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E02F461813AB5A005CA4B1 /* main.m */; };
@@ -81,6 +83,10 @@
 		0847BC9F1814A94E000C559B /* BMAudioTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMAudioTrack.h; sourceTree = "<group>"; };
 		0847BCA01814A94E000C559B /* BMAudioTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMAudioTrack.m; sourceTree = "<group>"; };
 		085A59C21814914900394472 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
+		0864ACCE1816353A0025DB7C /* BMReverbUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMReverbUnit.h; sourceTree = "<group>"; };
+		0864ACCF1816353A0025DB7C /* BMReverbUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMReverbUnit.m; sourceTree = "<group>"; };
+		0864ACD3181642FC0025DB7C /* BMDistortionUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMDistortionUnit.h; sourceTree = "<group>"; };
+		0864ACD4181642FC0025DB7C /* BMDistortionUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMDistortionUnit.m; sourceTree = "<group>"; };
 		08E02F371813AB5A005CA4B1 /* BMAudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMAudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08E02F3A1813AB5A005CA4B1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		08E02F3D1813AB5A005CA4B1 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -353,6 +359,10 @@
 				08EB17171814B91800879946 /* BMMixerUnit.m */,
 				08EB17181814B91800879946 /* BMSamplerUnit.h */,
 				08EB17191814B91800879946 /* BMSamplerUnit.m */,
+				0864ACCE1816353A0025DB7C /* BMReverbUnit.h */,
+				0864ACCF1816353A0025DB7C /* BMReverbUnit.m */,
+				0864ACD3181642FC0025DB7C /* BMDistortionUnit.h */,
+				0864ACD4181642FC0025DB7C /* BMDistortionUnit.m */,
 			);
 			path = AudioUnits;
 			sourceTree = "<group>";
@@ -525,8 +535,10 @@
 				08EB171C1814B91800879946 /* BMIOUnit.m in Sources */,
 				08EB17291814E4C300879946 /* BMMidiManager.m in Sources */,
 				08EB171E1814B91800879946 /* BMMixerUnit.m in Sources */,
+				0864ACD5181642FC0025DB7C /* BMDistortionUnit.m in Sources */,
 				08E02F4E1813AB5A005CA4B1 /* BMAppDelegate.m in Sources */,
 				0847BCA11814A94E000C559B /* BMAudioTrack.m in Sources */,
+				0864ACD01816353A0025DB7C /* BMReverbUnit.m in Sources */,
 				08EB171A1814B91800879946 /* BMAudioUnit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
