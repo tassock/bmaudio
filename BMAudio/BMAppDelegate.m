@@ -20,23 +20,23 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
-    BMSamplerUnit *tromboneSampler = [BMSamplerUnit unit];
+    BMSamplerUnit *sampler1 = [BMSamplerUnit unit];
     BMReverbUnit *reverbUnit = [BMReverbUnit unit];
-    BMAudioTrack *tromboneTrack = [BMAudioTrack trackWithUnits:@[tromboneSampler, reverbUnit]];
+    BMAudioTrack *tromboneTrack = [BMAudioTrack trackWithUnits:@[sampler1, reverbUnit]];
     [[BMAudio sharedInstance] loadAudioTrack:tromboneTrack];
     
-    BMSamplerUnit *tromboneSampler2 = [BMSamplerUnit unit];
+    BMSamplerUnit *sampler2 = [BMSamplerUnit unit];
     BMDistortionUnit *distortionUnit = [BMDistortionUnit unit];
-    BMAudioTrack *tromboneTrack2 = [BMAudioTrack trackWithUnits:@[tromboneSampler2, distortionUnit]];
+    BMAudioTrack *tromboneTrack2 = [BMAudioTrack trackWithUnits:@[sampler2, distortionUnit]];
     [[BMAudio sharedInstance] loadAudioTrack:tromboneTrack2];
     
     [[BMAudio sharedInstance] setUpAudioGraph];
     
-    [tromboneSampler loadPreset:@"Trombone"];
-    [tromboneSampler2 loadPreset:@"Trombone"];
+    [sampler1 loadPreset:@"Trombone"];
+    [sampler2 loadPreset:@"Trombone"];
     
     [[BMMidiManager sharedInstance] setUp];
-    [BMMidiManager sharedInstance].instrumentDelegate = tromboneSampler2;
+    [BMMidiManager sharedInstance].instrumentDelegate = sampler2;
     
     BMMusicPlayer *musicPlayer = [[BMMusicPlayer alloc] init];
     [musicPlayer setUpFromGraph:[BMAudio sharedInstance]->graph];
