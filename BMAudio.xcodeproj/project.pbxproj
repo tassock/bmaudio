@@ -49,6 +49,7 @@
 		08E02FAE1813AEF2005CA4B1 /* BMAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E02F701813ABB1005CA4B1 /* BMAudio.m */; };
 		08E02FC91813B7A8005CA4B1 /* Trombone.aupreset in Resources */ = {isa = PBXBuildFile; fileRef = 08E02FC81813B7A8005CA4B1 /* Trombone.aupreset */; };
 		08E02FCA1813B7A8005CA4B1 /* Trombone.aupreset in Resources */ = {isa = PBXBuildFile; fileRef = 08E02FC81813B7A8005CA4B1 /* Trombone.aupreset */; };
+		08E9EB0B181C118F0004B1C0 /* BMMusicPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0864ACD7181647160025DB7C /* BMMusicPlayer.m */; };
 		08EB17091814B7E100879946 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E02F3F1813AB5A005CA4B1 /* Foundation.framework */; };
 		08EB170B1814B7EE00879946 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EB170A1814B7EE00879946 /* AudioToolbox.framework */; };
 		08EB170D1814B86900879946 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EB170C1814B86900879946 /* AudioUnit.framework */; };
@@ -570,6 +571,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08E02F8E1813ACBE005CA4B1 /* BMViewController.m in Sources */,
+				08E9EB0B181C118F0004B1C0 /* BMMusicPlayer.m in Sources */,
 				08EB172A1814E4C300879946 /* BMMidiManager.m in Sources */,
 				08EB17211814B91800879946 /* BMSamplerUnit.m in Sources */,
 				08E02FAE1813AEF2005CA4B1 /* BMAudio.m in Sources */,

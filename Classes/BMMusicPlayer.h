@@ -9,7 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface BMMusicPlayer : NSObject
+@property (nonatomic, strong, readwrite) NSString *midiFileName;
 
-- (void)setUpFromGraph:(AUGraph)graph;
+- (id)initWithGraph:(AUGraph)argGraph;
+- (void)play;
+- (void)pause;
+- (void)reset;
+- (MusicTimeStamp)timeStamp;
 
 @end

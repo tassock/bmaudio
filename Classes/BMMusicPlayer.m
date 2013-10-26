@@ -8,53 +8,131 @@
 
 #import "BMMusicPlayer.h"
 
+@interface BMMusicPlayer ()
+{
+    MusicPlayer musicPlayer;
+    MusicSequence musicSequence;
+    MusicTimeStamp trackDuration;
+    AUGraph graph;
+}
+@end
+
 @implementation BMMusicPlayer
 
-- (void)setUpFromGraph:(AUGraph)graph
+#pragma mark - lifecyle
+
+- (id)initWithGraph:(AUGraph)argGraph
 {
-    MusicPlayer p;
-    MusicSequence s;
+    if (self = [super init])
+    {
+        graph = argGraph;
+        NewMusicPlayer(&musicPlayer);
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+    DisposeMusicPlayer(musicPlayer);
+}
+
+#pragma mark - utility
+
+- (void)loadSequence
+{
+    if (!_midiFileName) return; // better way to handle this?
     
+    NSURL* url = [[NSBundle mainBundle] URLForResource:_midiFileName withExtension:@"mid"];
     
-    NewMusicPlayer(&p);
-    
-    NSURL* url = [[NSBundle mainBundle] URLForResource:@"presto" withExtension:@"mid"];
-    
-    NewMusicSequence(&s);
-    MusicSequenceFileLoad(s, (__bridge CFURLRef)url, 0,0);
+    NewMusicSequence(&musicSequence);
+    MusicSequenceFileLoad(musicSequence, (__bridge CFURLRef)url, 0,0);
     
     MusicTrack t;
-    MusicTimeStamp len;
     UInt32 sz = sizeof(MusicTimeStamp);
-    MusicSequenceGetIndTrack(s, 0, &t);
-    MusicTrackGetProperty(t, kSequenceTrackProperty_TrackLength, &len, &sz);
+    MusicSequenceGetIndTrack(musicSequence, 0, &t);
+    MusicTrackGetProperty(t, kSequenceTrackProperty_TrackLength, &trackDuration, &sz);
     
     // this is it, arthur pewty! feed the track to the ausampler and let 'er rip
-    MusicSequenceSetAUGraph(s, graph);
-    //MusicTrackSetDestNode(t, samplerNode);
+    MusicSequenceSetAUGraph(musicSequence, graph);
     
-    
-    MusicPlayerSetSequence(p, s);
-    MusicPlayerPreroll(p);
-    MusicPlayerStart(p);
-    while (1) {
-        usleep (3 * 1000 * 1000);
-        MusicTimeStamp now = 0;
-		MusicPlayerGetTime (p, &now);
-        if (now >= len)
-            break;
-        NSLog(@"%f", now);
+    MusicPlayerSetSequence(musicPlayer, musicSequence);
+    MusicPlayerPreroll(musicPlayer);
+}
+
+#pragma mark - public API
+
+- (void)play
+{
+    if (!self.isPlaying)
+    {
+        if (!musicSequence)
+        {
+            [self loadSequence];
+        }
+        
+        MusicPlayerStart(musicPlayer);
+
+// USE TO CHECK ENDING?
+//        // on background thread
+//        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+//            //Background Thread
+//            MusicPlayerStart(musicPlayer);
+//            while (1) {
+//                usleep (3 * 1000 * 1000);
+//                MusicTimeStamp now = 0;
+//                MusicPlayerGetTime (musicPlayer, &now);
+//                if (now >= trackDuration)
+//                    break;
+//                NSLog(@"%f", now);
+//            }
+//            NSLog(@"finishing");
+//            DisposeMusicSequence(musicSequence);
+//            isPlaying = NO;
+//        });
     }
-    
-    NSLog(@"finishing");
-    
-    // shut everything down in good order
-//    AUGraphStop(graph);
-    MusicPlayerStop(p);
-//    DisposeAUGraph(graph);
-    DisposeMusicSequence(s);
-    DisposeMusicPlayer(p);
-//    [mySession setActive: NO error:nil];
+}
+
+- (void)pause
+{
+    MusicPlayerStop(musicPlayer);
+}
+
+- (void)reset
+{
+    [self pause];
+    DisposeMusicSequence(musicSequence);
+    [self setTimeStamp:0];
+}
+
+- (BOOL)isPlaying
+{
+    Boolean isPlaying;
+    MusicPlayerIsPlaying(musicPlayer, &isPlaying);
+    return isPlaying;
+}
+
+- (MusicTimeStamp)timeStamp
+{
+    MusicTimeStamp now = 0;
+    MusicPlayerGetTime (musicPlayer, &now);
+    return now;
+}
+
+- (void)setTimeStamp:(MusicTimeStamp)timeStamp
+{
+    MusicPlayerSetTime(musicPlayer, timeStamp);
+}
+
+- (Float64)playbackRate
+{
+    Float64 rate;
+    MusicPlayerGetPlayRateScalar(musicPlayer, &rate);
+    return rate;
+}
+
+- (void)setPlaybackRate:(Float64)rate
+{
+    MusicPlayerSetPlayRateScalar(musicPlayer, rate);
 }
 
 @end

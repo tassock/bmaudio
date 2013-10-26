@@ -17,6 +17,15 @@
 
 @implementation BMMidiManager
 
+// Library for MIDI connectivity:
+// https://github.com/petegoodliffe/PGMidi
+
+// Library for MIDI utilities
+// https://github.com/meshula/LabMidi
+
+// Guide about MIDI on iOS (questionable since their demo doesn't run)
+// http://www.deluge.co/?q=all-things-midi
+
 void MyMIDINotifyProc (const MIDINotification  *message, void *refCon) {
 	printf("MIDI Notify, messageId=%d,", message->messageID);
 }
