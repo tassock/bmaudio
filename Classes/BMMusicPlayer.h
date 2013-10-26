@@ -16,5 +16,6 @@
 - (void)pause;
 - (void)reset;
 - (MusicTimeStamp)timeStamp;
+- (CABarBeatTime)beatPosition;
 
 @end

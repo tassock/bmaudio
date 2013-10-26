@@ -123,6 +123,15 @@
     MusicPlayerSetTime(musicPlayer, timeStamp);
 }
 
+- (CABarBeatTime)beatPosition
+{
+    MusicTimeStamp beats;
+    MusicSequenceGetBeatsForSeconds(musicSequence, [self timeStamp], &beats);
+    CABarBeatTime outBarBeatTime;
+    MusicSequenceBeatsToBarBeatTime(musicSequence, beats, 4, &outBarBeatTime);
+    return outBarBeatTime;
+}
+
 - (Float64)playbackRate
 {
     Float64 rate;
@@ -134,5 +143,11 @@
 {
     MusicPlayerSetPlayRateScalar(musicPlayer, rate);
 }
+
+//- (Float64)sequenceTempo
+//{
+//    MusicTrack *outTrack;
+//    MusicSequenceGetTempoTrack(musicSequence, outTrack);
+//}
 
 @end

@@ -19,6 +19,8 @@
     NSTimer *updateTimer;
 }
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *beatLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tempoLabel;
 @end
 
 @implementation BMViewController
@@ -68,6 +70,7 @@
 {
     MusicTimeStamp timeStamp = [musicPlayer timeStamp];
     self.timeLabel.text = [NSString stringWithFormat:@"%f", timeStamp];
+    self.beatLabel.text = [NSString stringWithFormat:@"%u.%u.%u", (int)[musicPlayer beatPosition].bar, [musicPlayer beatPosition].beat, [musicPlayer beatPosition].subbeat];
 }
 
 #pragma mark - actions
