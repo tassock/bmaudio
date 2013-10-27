@@ -52,6 +52,8 @@
 		08E9EB0B181C118F0004B1C0 /* BMMusicPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0864ACD7181647160025DB7C /* BMMusicPlayer.m */; };
 		08E9EB0F181C88660004B1C0 /* BMNoteEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E9EB0E181C88660004B1C0 /* BMNoteEvent.m */; };
 		08E9EB10181C8F840004B1C0 /* BMNoteEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E9EB0E181C88660004B1C0 /* BMNoteEvent.m */; };
+		08E9EB15181C9F3D0004B1C0 /* CarntSleepBassline.mid in Resources */ = {isa = PBXBuildFile; fileRef = 08E9EB14181C9F3D0004B1C0 /* CarntSleepBassline.mid */; };
+		08E9EB16181C9F3D0004B1C0 /* CarntSleepBassline.mid in Resources */ = {isa = PBXBuildFile; fileRef = 08E9EB14181C9F3D0004B1C0 /* CarntSleepBassline.mid */; };
 		08EB17091814B7E100879946 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E02F3F1813AB5A005CA4B1 /* Foundation.framework */; };
 		08EB170B1814B7EE00879946 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EB170A1814B7EE00879946 /* AudioToolbox.framework */; };
 		08EB170D1814B86900879946 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EB170C1814B86900879946 /* AudioUnit.framework */; };
@@ -142,6 +144,7 @@
 		08E02FC81813B7A8005CA4B1 /* Trombone.aupreset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Trombone.aupreset; sourceTree = "<group>"; };
 		08E9EB0D181C88660004B1C0 /* BMNoteEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMNoteEvent.h; sourceTree = "<group>"; };
 		08E9EB0E181C88660004B1C0 /* BMNoteEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMNoteEvent.m; sourceTree = "<group>"; };
+		08E9EB14181C9F3D0004B1C0 /* CarntSleepBassline.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = CarntSleepBassline.mid; sourceTree = "<group>"; };
 		08EB170A1814B7EE00879946 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		08EB170C1814B86900879946 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		08EB17121814B91800879946 /* BMAudioUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMAudioUnit.h; sourceTree = "<group>"; };
@@ -217,6 +220,7 @@
 				08E02F381813AB5A005CA4B1 /* Products */,
 				08E02F6E1813AB97005CA4B1 /* Classes */,
 				08E02FC81813B7A8005CA4B1 /* Trombone.aupreset */,
+				08E9EB13181C9F3D0004B1C0 /* MIDI */,
 				085A59C21814914900394472 /* Sounds */,
 			);
 			sourceTree = "<group>";
@@ -366,6 +370,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		08E9EB13181C9F3D0004B1C0 /* MIDI */ = {
+			isa = PBXGroup;
+			children = (
+				08E9EB14181C9F3D0004B1C0 /* CarntSleepBassline.mid */,
+			);
+			path = MIDI;
+			sourceTree = "<group>";
+		};
 		08EB17111814B91800879946 /* AudioUnits */ = {
 			isa = PBXGroup;
 			children = (
@@ -502,6 +514,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08E9EB15181C9F3D0004B1C0 /* CarntSleepBassline.mid in Resources */,
 				085A59C31814914900394472 /* Sounds in Resources */,
 				08E02F451813AB5A005CA4B1 /* InfoPlist.strings in Resources */,
 				08E02F531813AB5A005CA4B1 /* Images.xcassets in Resources */,
@@ -528,6 +541,7 @@
 				085A59C41814914900394472 /* Sounds in Resources */,
 				08E02FCA1813B7A8005CA4B1 /* Trombone.aupreset in Resources */,
 				08E02F901813ACBE005CA4B1 /* Images.xcassets in Resources */,
+				08E9EB16181C9F3D0004B1C0 /* CarntSleepBassline.mid in Resources */,
 				08E02F821813ACBE005CA4B1 /* InfoPlist.strings in Resources */,
 				08E02F8B1813ACBE005CA4B1 /* Main.storyboard in Resources */,
 			);

@@ -41,10 +41,11 @@
     
     [tromboneSampler loadPreset:@"Trombone"];
     
-    musicPlayer = [[BMMusicPlayer alloc] initWithBMAudio:[BMAudio sharedInstance]];
-    musicPlayer.midiFileName = @"presto";
+    musicPlayer = [[BMMusicPlayer alloc] init];
+    musicPlayer.midiFileName = @"CarntSleepBassline";
     [musicPlayer loadSequence];
-    [musicPlayer noteEventsOnOrAfterBeat:16 beforeBeat:32];
+    musicPlayer.currentTempo = 70.0;
+    [musicPlayer noteEventsOnOrAfterBeat:0 beforeBeat:32];
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,10 +71,10 @@
 
 - (void)updateUI:(NSTimer *)argTimer
 {
-    MusicTimeStamp timeStamp = [musicPlayer timeStamp];
+    MusicTimeStamp timeStamp = [musicPlayer currentTime];
     self.timeLabel.text = [NSString stringWithFormat:@"%f", timeStamp];
-    self.beatLabel.text = [NSString stringWithFormat:@"%u.%u.%u", (int)[musicPlayer beatPosition].bar, [musicPlayer beatPosition].beat, [musicPlayer beatPosition].subbeat];
-    self.tempoLabel.text = [NSString stringWithFormat:@"%f", musicPlayer.tempo];
+    self.beatLabel.text = [NSString stringWithFormat:@"%u.%u.%u", (int)[musicPlayer currentBeat].bar, [musicPlayer currentBeat].beat, [musicPlayer currentBeat].subbeat];
+    self.tempoLabel.text = [NSString stringWithFormat:@"%f", musicPlayer.currentTempo];
 }
 
 #pragma mark - actions

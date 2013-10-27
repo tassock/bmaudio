@@ -27,7 +27,7 @@
 // http://www.deluge.co/?q=all-things-midi
 
 void MyMIDINotifyProc (const MIDINotification  *message, void *refCon) {
-	printf("MIDI Notify, messageId=%d,", message->messageID);
+	printf("MIDI Notify, messageId=%d,", (int)message->messageID);
 }
 
 static void	MyMIDIReadProc(const MIDIPacketList *pktlist, void *refCon, void *connRefCon) {

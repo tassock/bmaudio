@@ -39,7 +39,7 @@
     [BMMidiManager sharedInstance].instrumentDelegate = sampler2;
     
     BMMusicPlayer *musicPlayer = [[BMMusicPlayer alloc] init];
-    [musicPlayer setUpFromGraph:[BMAudio sharedInstance]->graph];
+    [musicPlayer loadSequence];
 }
 
 @end

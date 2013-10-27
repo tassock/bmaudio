@@ -17,19 +17,17 @@
     MusicSequence musicSequence;
     MusicTimeStamp trackDuration;
 }
-@property (nonatomic, strong, readwrite) BMAudio *audio;
-@property (nonatomic, assign, readwrite) Float64 tempo;
+@property (nonatomic, assign, readwrite) Float64 trackTempo;
 @end
 
 @implementation BMMusicPlayer
 
 #pragma mark - lifecyle
 
-- (id)initWithBMAudio:(BMAudio*)audio
+- (id)init
 {
     if (self = [super init])
     {
-        self.audio = audio;
         NewMusicPlayer(&musicPlayer);
     }
     return self;
@@ -64,7 +62,7 @@
         if (eventType == kMusicEventType_ExtendedTempo)
         {
             ExtendedTempoEvent *extendedTempo = (ExtendedTempoEvent*)eventData;
-            self.tempo = extendedTempo->bpm;
+            self.trackTempo = extendedTempo->bpm;
             break;
         }
         
@@ -72,6 +70,9 @@
         MusicEventIteratorHasNextEvent(eventIterator, &hasNextEvent);
         if (hasNextEvent) MusicEventIteratorNextEvent(eventIterator);
     }
+    
+    // If we didn't find a tempo event, use the default tempo
+    if (_trackTempo == 0) self.trackTempo = 120.0;
 }
 
 - (void)loadSequence
@@ -89,7 +90,7 @@
     MusicTrackGetProperty(t, kSequenceTrackProperty_TrackLength, &trackDuration, &sz);
     
     // this is it, arthur pewty! feed the track to the ausampler and let 'er rip
-    MusicSequenceSetAUGraph(musicSequence, _audio->graph);
+    MusicSequenceSetAUGraph(musicSequence, [BMAudio sharedInstance]->graph);
     
     MusicPlayerSetSequence(musicPlayer, musicSequence);
     MusicPlayerPreroll(musicPlayer);
@@ -139,7 +140,7 @@
 {
     [self pause];
     DisposeMusicSequence(musicSequence);
-    [self setTimeStamp:0];
+    [self setCurrentTime:0];
 }
 
 - (BOOL)isPlaying
@@ -149,25 +150,36 @@
     return isPlaying;
 }
 
-- (MusicTimeStamp)timeStamp
+#pragma mark - property setters / getters
+
+- (MusicTimeStamp)currentTime
 {
     MusicTimeStamp now = 0;
     MusicPlayerGetTime (musicPlayer, &now);
     return now;
 }
 
-- (void)setTimeStamp:(MusicTimeStamp)timeStamp
+- (void)setCurrentTime:(MusicTimeStamp)timeStamp
 {
     MusicPlayerSetTime(musicPlayer, timeStamp);
 }
 
-- (CABarBeatTime)beatPosition
+- (CABarBeatTime)currentBeat
 {
     MusicTimeStamp beats;
-    MusicSequenceGetBeatsForSeconds(musicSequence, [self timeStamp], &beats);
+    MusicSequenceGetBeatsForSeconds(musicSequence, [self currentTime], &beats);
     CABarBeatTime outBarBeatTime;
     MusicSequenceBeatsToBarBeatTime(musicSequence, beats, 4, &outBarBeatTime);
     return outBarBeatTime;
+}
+
+- (void)setCurrentBeat:(CABarBeatTime)currentBeat
+{
+    MusicTimeStamp beats;
+    MusicSequenceBarBeatTimeToBeats(musicSequence, &currentBeat, &beats);
+    MusicTimeStamp seconds;
+    MusicSequenceGetSecondsForBeats(musicSequence, beats, &seconds);
+    self.currentTime = seconds;
 }
 
 - (Float64)playbackRate
@@ -180,6 +192,16 @@
 - (void)setPlaybackRate:(Float64)rate
 {
     MusicPlayerSetPlayRateScalar(musicPlayer, rate);
+}
+
+- (Float64)currentTempo
+{
+    return _trackTempo * [self playbackRate];
+}
+
+- (void)setCurrentTempo:(Float64)desiredTempo
+{
+    self.playbackRate = desiredTempo / _trackTempo;
 }
 
 #pragma mark - sequence stuff
