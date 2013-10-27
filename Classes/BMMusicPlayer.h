@@ -12,6 +12,7 @@
 
 @interface BMMusicPlayer : NSObject
 @property (nonatomic, strong, readwrite) NSString *midiFileName;
+@property (nonatomic, assign, readonly) Float64 tempo;
 
 - (id)initWithBMAudio:(BMAudio*)audio;
 - (void)loadSequence;

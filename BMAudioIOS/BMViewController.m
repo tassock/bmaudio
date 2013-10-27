@@ -73,6 +73,7 @@
     MusicTimeStamp timeStamp = [musicPlayer timeStamp];
     self.timeLabel.text = [NSString stringWithFormat:@"%f", timeStamp];
     self.beatLabel.text = [NSString stringWithFormat:@"%u.%u.%u", (int)[musicPlayer beatPosition].bar, [musicPlayer beatPosition].beat, [musicPlayer beatPosition].subbeat];
+    self.tempoLabel.text = [NSString stringWithFormat:@"%f", musicPlayer.tempo];
 }
 
 #pragma mark - actions

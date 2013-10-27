@@ -18,6 +18,7 @@
     MusicTimeStamp trackDuration;
 }
 @property (nonatomic, strong, readwrite) BMAudio *audio;
+@property (nonatomic, assign, readwrite) Float64 tempo;
 @end
 
 @implementation BMMusicPlayer
@@ -41,6 +42,38 @@
 
 #pragma mark - utility
 
+- (void)fetchExtendedTempo
+{
+    MusicTrack tempoTrack;
+    MusicSequenceGetTempoTrack(musicSequence, &tempoTrack);
+    MusicEventIterator eventIterator;
+    NewMusicEventIterator(tempoTrack, &eventIterator);
+    
+    Boolean hasNextEvent = YES;
+    while (hasNextEvent) {
+        MusicTimeStamp timeStamp;
+        MusicEventType eventType;
+        const void *eventData;
+        UInt32 eventDataSize;
+        MusicEventIteratorGetEventInfo(eventIterator,
+                                       &timeStamp,
+                                       &eventType,
+                                       &eventData,
+                                       &eventDataSize);
+        
+        if (eventType == kMusicEventType_ExtendedTempo)
+        {
+            ExtendedTempoEvent *extendedTempo = (ExtendedTempoEvent*)eventData;
+            self.tempo = extendedTempo->bpm;
+            break;
+        }
+        
+        // increment event
+        MusicEventIteratorHasNextEvent(eventIterator, &hasNextEvent);
+        if (hasNextEvent) MusicEventIteratorNextEvent(eventIterator);
+    }
+}
+
 - (void)loadSequence
 {
     if (!_midiFileName) return; // better way to handle this?
@@ -60,6 +93,8 @@
     
     MusicPlayerSetSequence(musicPlayer, musicSequence);
     MusicPlayerPreroll(musicPlayer);
+    
+    [self fetchExtendedTempo];
 }
 
 #pragma mark - public API
