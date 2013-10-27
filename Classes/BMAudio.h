@@ -15,6 +15,7 @@
     @public
     AUGraph graph;
 }
+@property (nonatomic, readwrite, strong) NSArray *audioTracks;
 
 + (instancetype)sharedInstance;
 

@@ -50,6 +50,8 @@
 		08E02FC91813B7A8005CA4B1 /* Trombone.aupreset in Resources */ = {isa = PBXBuildFile; fileRef = 08E02FC81813B7A8005CA4B1 /* Trombone.aupreset */; };
 		08E02FCA1813B7A8005CA4B1 /* Trombone.aupreset in Resources */ = {isa = PBXBuildFile; fileRef = 08E02FC81813B7A8005CA4B1 /* Trombone.aupreset */; };
 		08E9EB0B181C118F0004B1C0 /* BMMusicPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0864ACD7181647160025DB7C /* BMMusicPlayer.m */; };
+		08E9EB0F181C88660004B1C0 /* BMNoteEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E9EB0E181C88660004B1C0 /* BMNoteEvent.m */; };
+		08E9EB10181C8F840004B1C0 /* BMNoteEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E9EB0E181C88660004B1C0 /* BMNoteEvent.m */; };
 		08EB17091814B7E100879946 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E02F3F1813AB5A005CA4B1 /* Foundation.framework */; };
 		08EB170B1814B7EE00879946 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EB170A1814B7EE00879946 /* AudioToolbox.framework */; };
 		08EB170D1814B86900879946 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EB170C1814B86900879946 /* AudioUnit.framework */; };
@@ -138,6 +140,8 @@
 		08E02FA91813ACE4005CA4B1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
 		08E02FAB1813ACEA005CA4B1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		08E02FC81813B7A8005CA4B1 /* Trombone.aupreset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Trombone.aupreset; sourceTree = "<group>"; };
+		08E9EB0D181C88660004B1C0 /* BMNoteEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMNoteEvent.h; sourceTree = "<group>"; };
+		08E9EB0E181C88660004B1C0 /* BMNoteEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMNoteEvent.m; sourceTree = "<group>"; };
 		08EB170A1814B7EE00879946 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		08EB170C1814B86900879946 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		08EB17121814B91800879946 /* BMAudioUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMAudioUnit.h; sourceTree = "<group>"; };
@@ -313,6 +317,8 @@
 				08EB17281814E4C300879946 /* BMMidiManager.m */,
 				0864ACD6181647160025DB7C /* BMMusicPlayer.h */,
 				0864ACD7181647160025DB7C /* BMMusicPlayer.m */,
+				08E9EB0D181C88660004B1C0 /* BMNoteEvent.h */,
+				08E9EB0E181C88660004B1C0 /* BMNoteEvent.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -544,6 +550,7 @@
 			files = (
 				0864ACD8181647160025DB7C /* BMMusicPlayer.m in Sources */,
 				08E02F471813AB5A005CA4B1 /* main.m in Sources */,
+				08E9EB0F181C88660004B1C0 /* BMNoteEvent.m in Sources */,
 				08EB17251814B99500879946 /* BMAudioHelpers.m in Sources */,
 				08EB17201814B91800879946 /* BMSamplerUnit.m in Sources */,
 				08E02F711813ABB1005CA4B1 /* BMAudio.m in Sources */,
@@ -583,6 +590,7 @@
 				08EB171F1814B91800879946 /* BMMixerUnit.m in Sources */,
 				08E02F881813ACBE005CA4B1 /* BMAppDelegate.m in Sources */,
 				0847BCA21814AE68000C559B /* BMAudioTrack.m in Sources */,
+				08E9EB10181C8F840004B1C0 /* BMNoteEvent.m in Sources */,
 				08EB171B1814B91800879946 /* BMAudioUnit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

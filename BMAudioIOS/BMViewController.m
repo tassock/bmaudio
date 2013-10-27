@@ -41,8 +41,10 @@
     
     [tromboneSampler loadPreset:@"Trombone"];
     
-    musicPlayer = [[BMMusicPlayer alloc] initWithGraph:[BMAudio sharedInstance]->graph];
+    musicPlayer = [[BMMusicPlayer alloc] initWithBMAudio:[BMAudio sharedInstance]];
     musicPlayer.midiFileName = @"presto";
+    [musicPlayer loadSequence];
+    [musicPlayer noteEventsOnOrAfterBeat:16 beforeBeat:32];
 }
 
 - (void)didReceiveMemoryWarning

@@ -7,25 +7,28 @@
 //
 
 #import "BMMusicPlayer.h"
+#import "BMAudio.h"
+#import "BMAudioTrack.h"
+#import "BMNoteEvent.h"
 
 @interface BMMusicPlayer ()
 {
     MusicPlayer musicPlayer;
     MusicSequence musicSequence;
     MusicTimeStamp trackDuration;
-    AUGraph graph;
 }
+@property (nonatomic, strong, readwrite) BMAudio *audio;
 @end
 
 @implementation BMMusicPlayer
 
 #pragma mark - lifecyle
 
-- (id)initWithGraph:(AUGraph)argGraph
+- (id)initWithBMAudio:(BMAudio*)audio
 {
     if (self = [super init])
     {
-        graph = argGraph;
+        self.audio = audio;
         NewMusicPlayer(&musicPlayer);
     }
     return self;
@@ -53,7 +56,7 @@
     MusicTrackGetProperty(t, kSequenceTrackProperty_TrackLength, &trackDuration, &sz);
     
     // this is it, arthur pewty! feed the track to the ausampler and let 'er rip
-    MusicSequenceSetAUGraph(musicSequence, graph);
+    MusicSequenceSetAUGraph(musicSequence, _audio->graph);
     
     MusicPlayerSetSequence(musicPlayer, musicSequence);
     MusicPlayerPreroll(musicPlayer);
@@ -144,10 +147,61 @@
     MusicPlayerSetPlayRateScalar(musicPlayer, rate);
 }
 
-//- (Float64)sequenceTempo
-//{
-//    MusicTrack *outTrack;
-//    MusicSequenceGetTempoTrack(musicSequence, outTrack);
-//}
+#pragma mark - sequence stuff
+
+- (UInt32)trackCount
+{
+    UInt32 outNumberOfTracks;
+    MusicSequenceGetTrackCount(musicSequence, &outNumberOfTracks);
+    return outNumberOfTracks;
+}
+
+- (NSArray*)noteEventsOnOrAfterBeat:(MusicTimeStamp)afterBeat beforeBeat:(MusicTimeStamp)beforeBeat
+{
+    NSMutableArray *notes = [[NSMutableArray alloc] initWithCapacity:5];
+    for (UInt32 t = 0; t < [self trackCount]; t++) {
+        NSArray *audioTracks = [BMAudio sharedInstance].audioTracks;
+        if (t < audioTracks.count)
+        {
+            BMAudioTrack *audioTrack = [audioTracks objectAtIndex:t];
+            MusicSequenceGetIndTrack(musicSequence, t, &audioTrack->musicTrack);
+            NewMusicEventIterator(audioTrack->musicTrack, &audioTrack->eventIterator);
+            
+            MusicEventIteratorSeek(audioTrack->eventIterator, afterBeat);
+            
+            Boolean hasNextEvent = YES;
+            while (hasNextEvent) {
+                MusicTimeStamp timeStamp;
+                MusicEventType eventType;
+                const void *eventData;
+                UInt32 eventDataSize;
+                MusicEventIteratorGetEventInfo(audioTrack->eventIterator,
+                                               &timeStamp,
+                                               &eventType,
+                                               &eventData,
+                                               &eventDataSize);
+                if (timeStamp >= beforeBeat) break;
+                
+                if (eventType == kMusicEventType_MIDINoteMessage)
+                {
+                    MIDINoteMessage *message = (MIDINoteMessage*)eventData;
+                    BMNoteEvent *noteEvent = [[BMNoteEvent alloc] init];
+                    noteEvent.beat = timeStamp;
+                    noteEvent.note = message->note;
+                    noteEvent.velocity = message->velocity;
+                    noteEvent.duration = message->duration;
+                    [notes addObject:noteEvent];
+                }
+                
+                // increment event
+                MusicEventIteratorHasNextEvent(audioTrack->eventIterator, &hasNextEvent);
+                if (hasNextEvent) MusicEventIteratorNextEvent(audioTrack->eventIterator);
+            }
+        }
+    }
+    NSLog(@"Notes: %@", notes);
+    return [NSArray arrayWithArray:notes];
+}
+
 
 @end

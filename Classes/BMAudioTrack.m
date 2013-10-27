@@ -24,4 +24,8 @@
     return self;
 }
 
+/**
+ *  NOTE: If you edit a music track after associating it with a music event iterator, you must discard iterator and create a new one. 
+ */
+
 @end

@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface BMAudioTrack : NSObject
+{
+    @public
+    MusicTrack musicTrack;
+    MusicEventIterator eventIterator;
+}
 @property (nonatomic, readwrite, strong) NSArray *audioUnits;
 
 + (instancetype)trackWithUnits:(NSArray*)audioUnits;

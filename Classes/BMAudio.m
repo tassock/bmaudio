@@ -25,7 +25,6 @@
     BMIOUnit *ioUnit;
     BMMixerUnit *mixerUnit;
 }
-@property (nonatomic, readwrite, strong) NSMutableArray *audioTracks;
 @end
 
 @implementation BMAudio
@@ -36,7 +35,7 @@
 {
     if (self = [super init])
     {
-        self.audioTracks = [NSMutableArray array];
+        self.audioTracks = [NSArray array];
     }
     return self;
 }
@@ -154,7 +153,9 @@
 
 - (void)loadAudioTrack:(BMAudioTrack*)audioTrack
 {
-    [_audioTracks addObject:audioTrack];
+    NSMutableArray *mutableAudioTracks = [NSMutableArray arrayWithArray:_audioTracks];
+    [mutableAudioTracks addObject:audioTrack];
+    _audioTracks = [NSArray arrayWithArray:mutableAudioTracks];
 }
 
 @end
