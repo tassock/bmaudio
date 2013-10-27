@@ -60,6 +60,11 @@
 @property (nonatomic, assign, readwrite) Float64 currentTempo;
 
 /**
+ *  String represent the current beat in <bar>.<beat>.<subbeat> format
+ */
+@property (nonatomic, strong, readonly) NSString *currentBeatString;
+
+/**
  *  Current position of playback in terms of time
  */
 @property (nonatomic, assign, readwrite) MusicTimeStamp currentTime;

@@ -189,6 +189,11 @@
     self.currentTime = seconds;
 }
 
+- (NSString*)currentBeatString
+{
+    return [NSString stringWithFormat:@"%u.%u.%u", (int)[self currentBeat].bar, [self currentBeat].beat, [self currentBeat].subbeat];
+}
+
 - (Float64)playbackRate
 {
     Float64 rate;
