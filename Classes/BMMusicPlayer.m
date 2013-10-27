@@ -35,6 +35,7 @@
 
 - (void)dealloc
 {
+    DisposeMusicSequence(musicSequence);
     DisposeMusicPlayer(musicPlayer);
 }
 
@@ -75,11 +76,11 @@
     if (_trackTempo == 0) self.trackTempo = 120.0;
 }
 
-- (void)loadSequence
+- (void)loadSequenceFromMidiFile:(NSString*)midiFileName
 {
-    if (!_midiFileName) return; // better way to handle this?
+    if (!midiFileName) return;
     
-    NSURL* url = [[NSBundle mainBundle] URLForResource:_midiFileName withExtension:@"mid"];
+    NSURL* url = [[NSBundle mainBundle] URLForResource:midiFileName withExtension:@"mid"];
     
     NewMusicSequence(&musicSequence);
     MusicSequenceFileLoad(musicSequence, (__bridge CFURLRef)url, 0,0);
@@ -104,11 +105,6 @@
 {
     if (!self.isPlaying)
     {
-        if (!musicSequence)
-        {
-            [self loadSequence];
-        }
-        
         MusicPlayerStart(musicPlayer);
 
 // USE TO CHECK ENDING?
@@ -139,7 +135,6 @@
 - (void)reset
 {
     [self pause];
-    DisposeMusicSequence(musicSequence);
     [self setCurrentTime:0];
 }
 

@@ -42,8 +42,7 @@
     [tromboneSampler loadPreset:@"Trombone"];
     
     musicPlayer = [[BMMusicPlayer alloc] init];
-    musicPlayer.midiFileName = @"CarntSleepBassline";
-    [musicPlayer loadSequence];
+    [musicPlayer loadSequenceFromMidiFile:@"CarntSleepBassline"];
     musicPlayer.currentTempo = 70.0;
     [musicPlayer noteEventsOnOrAfterBeat:0 beforeBeat:32];
 }

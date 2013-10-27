@@ -11,9 +11,26 @@
 @interface BMMusicPlayer : NSObject
 
 /**
- *  Name of the midi file to load into the sequence
+ *  Create and load a new MusicSequence from a given midi file
+ *
+ *  @param midiFileName midi file to load music sequence from.
  */
-@property (nonatomic, strong, readwrite) NSString *midiFileName;
+- (void)loadSequenceFromMidiFile:(NSString*)midiFileName;
+
+/**
+ *  Play the MusicSequence
+ */
+- (void)play;
+
+/**
+ *  Pause the MusicSequence. Playing after pausing will resume where you left off.
+ */
+- (void)pause;
+
+/**
+ *  Reset the MusicSequence. Playing after resetting will play from the start of the sequence
+ */
+- (void)reset;
 
 /**
  *  Tempo of the MusicSequence's music track
@@ -39,11 +56,6 @@
  *  Current position of playback in terms of beats
  */
 @property (nonatomic, assign, readwrite) CABarBeatTime currentBeat;
-
-- (void)loadSequence;
-- (void)play;
-- (void)pause;
-- (void)reset;
 
 /**
  *  Query MusicSequence for MIDI note events within a given range of beats across all MusicTracks
