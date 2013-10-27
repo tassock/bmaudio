@@ -11,6 +11,13 @@
 @interface BMMusicPlayer : NSObject
 
 /**
+ *  Singleton accessor
+ *
+ *  @return Shared instance of BMMusicPlayer
+ */
++ (instancetype)sharedInstance;
+
+/**
  *  Create and load a new MusicSequence from a given midi file
  *
  *  @param midiFileName midi file to load music sequence from.
@@ -31,6 +38,11 @@
  *  Reset the MusicSequence. Playing after resetting will play from the start of the sequence
  */
 - (void)reset;
+
+/**
+ *  Indicates whether the player is currently playing
+ */
+@property (nonatomic, assign, readonly) BOOL isPlaying;
 
 /**
  *  Tempo of the MusicSequence's music track

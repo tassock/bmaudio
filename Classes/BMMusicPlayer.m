@@ -24,6 +24,18 @@
 
 #pragma mark - lifecyle
 
++ (instancetype)sharedInstance
+{
+    static BMMusicPlayer *sharedInstance = nil;
+    
+    static dispatch_once_t predicate;
+    dispatch_once(&predicate, ^{
+        sharedInstance = [[self alloc] init];
+    });
+    
+    return sharedInstance;
+}
+
 - (id)init
 {
     if (self = [super init])
