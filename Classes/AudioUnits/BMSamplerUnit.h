@@ -9,7 +9,7 @@
 #import "BMAudioUnit.h"
 #import "BMMidiManager.h"
 
-@interface BMSamplerUnit : BMAudioUnit <BMMidiInstrument>
+@interface BMSamplerUnit : BMAudioUnit <BMMidiListener>
 
 - (void)loadPreset:(NSString*)presetName;
 

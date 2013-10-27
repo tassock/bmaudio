@@ -8,14 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol BMMidiInstrument <NSObject>
+@protocol BMMidiListener <NSObject>
 - (void)noteOnWithNote:(UInt32)note velocity:(UInt32)velocity;
 - (void)noteOffWithNote:(UInt32)note;
 @end
 
+// TODO rename to BMMidiPlaybackManager
 @interface BMMidiManager : NSObject
-@property (nonatomic, weak, readwrite) id<BMMidiInstrument>instrumentDelegate;
-
 + (instancetype)sharedInstance;
 - (void)setUp;
+- (void)addListener:(id<BMMidiListener>)listener;
+- (void)removeListener:(id<BMMidiListener>)listener;
 @end

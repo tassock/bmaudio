@@ -13,6 +13,7 @@
 {
     MIDIClientRef midiClient;
 }
+@property (nonatomic, readwrite, strong) NSMutableArray *listeners;
 @end
 
 @implementation BMMidiManager
@@ -44,15 +45,15 @@ static void	MyMIDIReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
 			Byte velocity = packet->data[2] & 0x7F;
 			printf("midiStatus=%d, midiCommand=%d. Note=%d, Velocity=%d\n", midiStatus, midiCommand, note, velocity);
             
-            if (midiManager.instrumentDelegate)
+            for (id<BMMidiListener>listener in midiManager.listeners)
             {
                 if (midiStatus == 144)
                 {
-                    [midiManager.instrumentDelegate noteOnWithNote:note velocity:velocity];
+                    [listener noteOnWithNote:note velocity:velocity];
                 }
                 else if (midiStatus == 128)
                 {
-                    [midiManager.instrumentDelegate noteOffWithNote:note];
+                    [listener noteOffWithNote:note];
                 }
             }
 		}
@@ -70,6 +71,15 @@ static void	MyMIDIReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
     });
     
     return sharedInstance;
+}
+
+- (id)init
+{
+    if (self = [super init])
+    {
+        self.listeners = [[NSMutableArray alloc] initWithCapacity:5];
+    }
+    return self;
 }
 
 - (void)setUp
@@ -94,6 +104,16 @@ static void	MyMIDIReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
 		CheckError (MIDIPortConnectSource(inPort, src, NULL),
 					"Couldn't connect MIDI port");
 	}
+}
+
+- (void)addListener:(id<BMMidiListener>)listener
+{
+    [_listeners addObject:listener];
+}
+
+- (void)removeListener:(id<BMMidiListener>)listener
+{
+    [_listeners removeObject:listener];
 }
 
 @end

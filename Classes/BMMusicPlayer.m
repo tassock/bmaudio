@@ -268,7 +268,7 @@
             }
         }
     }
-    NSLog(@"Notes: %@", notes);
+    // NSLog(@"Notes: %@", notes);
     return [NSArray arrayWithArray:notes];
 }
 
