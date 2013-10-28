@@ -36,7 +36,7 @@
     [sampler2 loadPreset:@"Trombone"];
     
     [[BMMidiManager sharedInstance] setUp];
-    [BMMidiManager sharedInstance].instrumentDelegate = sampler2;
+    [[BMMidiManager sharedInstance] addListener:sampler2];
     
     BMMusicPlayer *musicPlayer = [[BMMusicPlayer alloc] init];
     [musicPlayer loadSequenceFromMidiFile:@"CarntSleepBassline"];
