@@ -70,9 +70,14 @@
 @property (nonatomic, assign, readwrite) MusicTimeStamp currentTime;
 
 /**
- *  Current position of playback in terms of beats
+ *  Current position of playback in terms of beats, represented in CABarBeatTime
  */
 @property (nonatomic, assign, readwrite) CABarBeatTime currentBeat;
+
+/**
+ *  Current position of playback in terms of beats, represened as a float
+ */
+@property (nonatomic, assign, readwrite) Float64 currentBeatFloat;
 
 /**
  *  Query MusicSequence for MIDI note events within a given range of beats across all MusicTracks

@@ -189,6 +189,20 @@
     self.currentTime = seconds;
 }
 
+- (Float64)currentBeatFloat
+{
+    MusicTimeStamp beats;
+    MusicSequenceGetBeatsForSeconds(musicSequence, [self currentTime], &beats);
+    return beats;
+}
+
+- (void)setCurrentBeatFloat:(Float64)currentBeatFloat
+{
+    MusicTimeStamp seconds;
+    MusicSequenceGetSecondsForBeats(musicSequence, currentBeatFloat, &seconds);
+    self.currentTime = seconds;
+}
+
 - (NSString*)currentBeatString
 {
     return [NSString stringWithFormat:@"%u.%u.%u", (int)[self currentBeat].bar, [self currentBeat].beat, [self currentBeat].subbeat];
