@@ -45,16 +45,13 @@ static void	MyMIDIReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
 			Byte velocity = packet->data[2] & 0x7F;
 			printf("midiStatus=%d, midiCommand=%d. Note=%d, Velocity=%d\n", midiStatus, midiCommand, note, velocity);
             
-            for (id<BMMidiListener>listener in midiManager.listeners)
+            if (midiStatus == 144)
             {
-                if (midiStatus == 144)
-                {
-                    [listener noteOnWithNote:note velocity:velocity];
-                }
-                else if (midiStatus == 128)
-                {
-                    [listener noteOffWithNote:note];
-                }
+                [midiManager reportNoteOnWithNote:note velocity:velocity];
+            }
+            else if (midiStatus == 128)
+            {
+                [midiManager reportNoteOffWithNote:note];
             }
 		}
 		packet = MIDIPacketNext(packet);
@@ -114,6 +111,22 @@ static void	MyMIDIReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
 - (void)removeListener:(id<BMMidiListener>)listener
 {
     [_listeners removeObject:listener];
+}
+
+- (void)reportNoteOnWithNote:(UInt32)note velocity:(UInt32)velocity
+{
+    for (id<BMMidiListener>listener in _listeners)
+    {
+        [listener noteOnWithNote:note velocity:velocity];
+    }
+}
+
+- (void)reportNoteOffWithNote:(UInt32)note
+{
+    for (id<BMMidiListener>listener in _listeners)
+    {
+        [listener noteOffWithNote:note];
+    }
 }
 
 @end
